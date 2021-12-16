@@ -1,4 +1,4 @@
-path_roms = "C:/JERE/PROJECTS/nes-experiments/XE/livecoding/roms/"
+path_roms = "C:/JERE/PROJECTS/kupa/roms/"
 
 
 

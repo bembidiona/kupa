@@ -13,7 +13,7 @@
 
 // - STEP 2 -
 // now run fceux with a rom and the listener script
-"fceux -lua C:/JERE/PROJECTS/nes-experiments/XE/livecoding/listener-fceux.lua C:/JERE/PROJECTS/nes-experiments/XE/livecoding/roms/64.nes".runInTerminal;
+"fceux -lua C:/JERE/PROJECTS/kupa/listener-fceux.lua C:/JERE/PROJECTS/kupa/roms/64.nes".runInTerminal;
 
 // - STEP 3 -
 ~emu.connect; // connect supercollider to the emulator
