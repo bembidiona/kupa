@@ -11,4 +11,4 @@ You can directly control the APU to the bit level, force feed the PPU, or simply
 ### HOW TO USE:
 1- Install [Supercollider](https://supercollider.github.io/download)  
 2- Download [Fceux](https://fceux.com/web/download.html)  
-1- Open [example.scd](https://raw.githubusercontent.com/bembidiona/kupa/main/example.scd) in the Supercollider IDE, and start from there.
+3- Open [example.scd](https://raw.githubusercontent.com/bembidiona/kupa/main/example.scd) in the Supercollider IDE, and start from there.
