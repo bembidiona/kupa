@@ -1,0 +1,19 @@
+- sacar los keyshortcuts cuando se toque!!! si no se seleccionan saveslot con los numeros, o se cambia la velocidad con - y +, y cosas peores de seguro
+- que el play arranque de una despues de frenado
+- slider de swing?
+- lo que se ve en los bits y lo q hay posta, esta atrasado?
+- todo el asunto de mandar "\n" como end tag es medio paja.
+
+---- PIANITO ----
+Un pianito que pisa todo
+---- GENERAL ----
+- unos mini objetitos, que a la primera evaluada parsean un string y generan un array. y las siguientes evaluadas, si el string sigue igual, ya no lo parsea de nuevo, solo busca el elemento y ya.
+- usar los braile para algo, justo son 8 puntitos
+"⡀⡁⡂⡃⡄⡅⡆⡇⡈⡉⡊⡋⡌⡍⡎⡏".ascii
+
+
+--- IDEAS ---
+estaria bueno poder gaurdar saveestates por fuera del emu:
+muchas muertes en juegos distintos, y se livecodea eso_
+ o justo antes del boss final con poquita vida
+
