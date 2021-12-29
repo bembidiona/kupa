@@ -191,8 +191,6 @@ if(~loop.isNil){
 			// apply ~spee
 			time_until_next_beat = time_until_next_beat / ~speed.abs;
 
-			~send.rram(0x00FC, 2r10000000);
-
 			//on/off channels
 			mix = ~apu.mixLoop & ~apu.mixGui;
 			~send.ram(0x4015, mix);
@@ -328,7 +326,23 @@ if(~loop.isNil){
 	},
 );
 
+// https://wiki.nesdev.org/w/index.php/APU_period_table
+~notetable = [[241, 7], [127, 7], [19, 7], [173, 6], [77, 6], [243, 5], [157, 5], [76, 5], [0, 5], [184, 4], [116, 4], [52, 4], [248, 3], [191, 3], [137, 3], [86, 3], [38, 3], [249, 2], [206, 2], [166, 2], [128, 2], [92, 2], [58, 2], [26, 2], [251, 1], [223, 1], [196, 1], [171, 1], [147, 1], [124, 1], [103, 1], [82, 1], [63, 1], [45, 1], [28, 1], [12, 1], [253, 0], [239, 0], [225, 0], [213, 0], [201, 0], [189, 0], [179, 0], [169, 0], [159, 0], [150, 0], [142, 0], [134, 0], [126, 0], [119, 0], [112, 0], [106, 0], [100, 0], [94, 0], [89, 0], [84, 0], [79, 0], [75, 0], [70, 0], [66, 0], [63, 0], [59, 0], [56, 0], [52, 0], [49, 0], [47, 0], [44, 0], [41, 0], [39, 0], [37, 0], [35, 0], [33, 0], [31, 0], [29, 0], [27, 0], [26, 0], [24, 0], [23, 0], [21, 0], [20, 0]];
+~note = {|channel=0, val|
+	var low, hi;
+	val = ~notetable[val];
+	low = val[0];
+	hi = val[1];
 
+	channel = channel*4;
+
+	~apu.state[channel+2] = low.asBinaryDigits;
+	~apu.state[channel+3] = hi.asBinaryDigits;
+
+	~send.ram(0x4002+channel, low);
+	~send.ram(0x4003+channel, hi);
+	~send.end;
+};
 
 
 

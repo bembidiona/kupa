@@ -21,7 +21,6 @@
 //--------------------------------------------------------------------------------------
 
 
-
 //now you can start the main apu loop from the play button on the GUI or like this:
 ~loop.play // and .stop .resume .pause
 
@@ -125,9 +124,9 @@
 	loop {
 		tick = tick + 1;
 
-		~send.ram(0x0754, 0); //force a mario size
+		~send.ram(0x0754, tick&1); //force a mario size
 		if(0.5.coin){~send.ppu((0x2000+rand(2000)), rand(255));}; //sometimes glitch a tile in the background
-		~send.txt((0x2000+rand(2000)),"hola"); //write "hola" in the nametable on smb
+		// ~send.txt((0x2000+rand(2000)),"hola"); //write "hola" in the nametable on smb
 		32.do{|i| ~send.ppu((0x3F00+i), tick+i)}; // changes palettes
 
 		// when using custom loops, you need to send a "\n" char or use ~send.end();
